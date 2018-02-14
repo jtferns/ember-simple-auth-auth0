@@ -1,10 +1,11 @@
-/* jshint node: true */
+/* eslint-env node */
+'use strict';
 require('dotenv').config();
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -52,8 +53,8 @@ module.exports = function(environment) {
     routeAfterAuthentication: 'protected',
     routeIfAlreadyAuthenticated: 'protected',
     auth0: {
-      clientID: process.env.AUTH0_CLIENT_ID,
-      domain: process.env.AUTH0_DOMAIN
+      clientID: process.env.AUTH0_CLIENT_ID || 'dummy',
+      domain: process.env.AUTH0_DOMAIN || 'dummy.com'
     }
   };
 

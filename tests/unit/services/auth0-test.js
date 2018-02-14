@@ -10,7 +10,7 @@ const {
 
 moduleFor('service:auth0', 'Unit | Service | auth0', {
   // Specify the other units that are required for this test.
-  // needs: ['service:foo']
+  needs: ['service:session']
 });
 
 function windowLocation() {

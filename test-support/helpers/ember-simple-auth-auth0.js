@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const {
   RSVP,
-  set
+  set,
 } = Ember;
 
 export function mockAuth0Lock(app, sessionData) {
@@ -14,5 +14,5 @@ export function mockAuth0Lock(app, sessionData) {
     return RSVP.resolve(sessionData);
   }.bind(auth0);
 
-  return wait();
+  return app.testHelpers.wait();
 }
